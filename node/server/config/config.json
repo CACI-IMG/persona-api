@@ -1,0 +1,18 @@
+{
+  "development": {
+    "username": "username",
+    "password": null,
+    "database": "persona_database",
+    "host": "localhost",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "username",
+    "password": null,
+    "database": "persona_database_test",
+    "host": "localhost",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  }
+}

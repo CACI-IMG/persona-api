@@ -1,0 +1,36 @@
+{
+  "name": "persona-api-challenge",
+  "version": "0.0.1",
+  "description": "Persona API challenge",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "export NODE_ENV=development && ./node_modules/nodemon/bin/nodemon.js src/app.js --exec 'npm run lint && node'",
+    "lint": "./node_modules/.bin/eslint **/*.js",
+    "setup": "unzip ./fake_profiles.zip && npm run create_db",
+    "create_db": "export NODE_ENV=development && sequelize db:create persona_database && sequelize db:migrate && sequelize db:seed:all",
+    "setup_test": "cp test/fake_profiles.json fake_profiles.json && npm run create_test_db",
+    "create_test_db": "export NODE_ENV=test && sequelize db:create persona_database_test && sequelize db:migrate && sequelize db:seed:all",
+    "test": "export NODE_ENV=test && mocha"
+  },
+  "keywords": [],
+  "author": "Steve Green",
+  "license": "GPLv3",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.0",
+    "eslint": "^4.17.0",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.15.0",
+    "pg": "^7.4.1",
+    "sequelize": "^4.35.1"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "mocha": "^5.0.4"
+  }
+}
